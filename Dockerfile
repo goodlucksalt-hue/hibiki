@@ -3,7 +3,7 @@ RUN corepack enable
 WORKDIR /app
 COPY source.tar.gz /tmp/source.tar.gz
 RUN tar -xzf /tmp/source.tar.gz -C /app
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 ENV RAILWAY_BUILD=1
 RUN pnpm run build:railway
 
